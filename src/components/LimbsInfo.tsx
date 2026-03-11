@@ -14,6 +14,15 @@ export default function LimbsInfo() {
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '1.1rem', marginBottom: '2rem' }}>
               There are several specially abled individuals and amputation survivors who struggle to get mobility aids that can help them navigate their lives, often due to a lack of means, access, or resources. Sevas Foundation Trust is dedicated to providing those in need with the resources they need to regain their mobility and the confidence to lead a normal, fulfilling life—completely free of cost.
             </p>
+            <div style={{
+              marginTop: '2rem',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)',
+              border: '2px solid var(--glass-border)'
+            }}>
+              <img src="/limb.png" alt="Advanced Artificial Limb Being Fitted" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
           </div>
 
           <div className="glass" style={{ padding: '2rem', background: 'var(--light-orange)', border: '1px solid var(--glass-border)' }}>

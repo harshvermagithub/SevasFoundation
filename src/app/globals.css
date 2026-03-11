@@ -200,3 +200,38 @@ a {
     font-size: 1.2rem;
   }
 }
+
+/* Dropdown Utilities */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 1001;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1.5rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background: var(--light-orange);
+  color: var(--primary);
+}
