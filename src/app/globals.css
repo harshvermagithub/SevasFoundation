@@ -85,6 +85,10 @@ a {
   padding-top: 8rem;
 }
 
+.page-content {
+  padding-top: 100px;
+}
+
 /* Buttons */
 .btn-primary {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -244,6 +248,9 @@ a {
   }
   .hero-section {
     padding-top: 14rem;
+  }
+  .page-content {
+    padding-top: 150px;
   }
 }
 

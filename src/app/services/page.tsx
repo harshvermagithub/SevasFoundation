@@ -2,7 +2,7 @@ import Services from '@/components/Services';
 
 export default function ServicesPage() {
   return (
-    <div style={{ paddingTop: '100px' }}>
+    <div className="page-content">
       <Services />
     </div>
   );

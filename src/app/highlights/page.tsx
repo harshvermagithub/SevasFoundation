@@ -13,7 +13,7 @@ export default function HighlightsPage() {
   ];
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh', background: 'var(--background)' }}>
+    <div className="page-content" style={{ minHeight: '100vh', background: 'var(--background)' }}>
       <div className="container" style={{ padding: '4rem 2rem' }}>
         <h1 className="section-title">Foundation <span className="glowing-text">Highlights</span></h1>
         
