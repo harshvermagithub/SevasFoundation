@@ -15,16 +15,16 @@ export default function Header() {
       justifyContent: 'space-between',
       alignItems: 'center',
     }}>
-      <Link href="/" style={{ fontSize: '1.5rem', fontWeight: 800 }}>
-        Sevas <span className="glowing-text">Foundation</span>
+      <Link href="/" style={{ fontSize: '1.2rem', fontWeight: 800 }}>
+        Hi-Tech <span className="glowing-text">Artificial Limbs</span> Center
       </Link>
       
       <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-        <Link href="#about" style={{ fontWeight: 500 }}>About</Link>
-        <Link href="#work" style={{ fontWeight: 500 }}>What We Do</Link>
-        <Link href="#journey" style={{ fontWeight: 500 }}>Journey</Link>
-        <Link href="#stories" style={{ fontWeight: 500 }}>Stories</Link>
-        <Link href="#donate" className="btn-primary">Donate Now</Link>
+        <Link href="/" style={{ fontWeight: 500 }}>Home</Link>
+        <Link href="#about" style={{ fontWeight: 500 }}>About Us</Link>
+        <Link href="#services" style={{ fontWeight: 500 }}>Services</Link>
+        <Link href="#products" style={{ fontWeight: 500 }}>Products</Link>
+        <Link href="#contact" className="btn-primary">Contact Us</Link>
       </nav>
     </header>
   );

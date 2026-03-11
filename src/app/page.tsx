@@ -1,23 +1,17 @@
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs';
-import WhatWeDo from '@/components/WhatWeDo';
-import Journey from '@/components/Journey';
-import SuccessStories from '@/components/SuccessStories';
-import Achievements from '@/components/Achievements';
-import Testimonials from '@/components/Testimonials';
-import DonateCTA from '@/components/DonateCTA';
+import Services from '@/components/Services';
+import Products from '@/components/Products';
+import ContactUs from '@/components/ContactUs';
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AboutUs />
-      <WhatWeDo />
-      <Journey />
-      <SuccessStories />
-      <Achievements />
-      <Testimonials />
-      <DonateCTA />
+      <Services />
+      <Products />
+      <ContactUs />
     </>
   );
 }

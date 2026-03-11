@@ -14,29 +14,39 @@ export default function Footer() {
         marginBottom: '4rem',
       }}>
         <div style={{ flex: '1 1 300px' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem' }}>
-            Sevas <span className="glowing-text">Foundation</span>
+          <h2 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.5rem' }}>
+            Re-life Medical & <br/><span className="glowing-text">Rehabilitation Services Pvt. Ltd.</span>
           </h2>
+          <h3 style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
+            Hi-Tech Artificial Limbs Center
+          </h3>
           <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-            Empowering the differently-abled to lead a life of dignity, respect, and independence. Together, we heal, enrich, and empower.
+            "It's not our disabilities, it's our abilities that count..."
           </p>
         </div>
         
         <div style={{ flex: '1 1 200px' }}>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Quick Links</h3>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <li><a href="/" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Home</a></li>
             <li><a href="#about" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>About Us</a></li>
-            <li><a href="#work" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Our Initiatives</a></li>
-            <li><a href="#stories" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Success Stories</a></li>
-            <li><a href="#donate" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Make a Donation</a></li>
+            <li><a href="#services" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Services</a></li>
+            <li><a href="#products" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Products & Prosthetics</a></li>
+            <li><a href="#contact" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Contact Us</a></li>
           </ul>
         </div>
         
         <div style={{ flex: '1 1 300px' }}>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--secondary)' }}>Contact</h3>
-          <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '0.5rem' }}>📍 Udaipur, Rajasthan, India</p>
-          <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '0.5rem' }}>📧 info@sevasfoundation.org</p>
-          <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>📞 +91 123 456 7890</p>
+          <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '0.5rem', lineHeight: 1.5 }}>
+            📍 # 209, 100 Feet Ring Road, BSK 3rd Stage, Bengaluru - 560 085
+          </p>
+          <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '0.5rem' }}>
+            📧 hitechartificiallimbcentre@gmail.com
+          </p>
+          <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '0.5rem' }}>
+            📞 +91 81399 55669 / 99861 44329
+          </p>
         </div>
       </div>
       
@@ -47,7 +57,7 @@ export default function Footer() {
         color: 'rgba(255, 255, 255, 0.5)',
         fontSize: '0.9rem'
       }}>
-        © {new Date().getFullYear()} Sevas Foundation. All rights reserved.
+        © {new Date().getFullYear()} Re-life Medical & Rehabilitation Services Pvt. Ltd. All rights reserved.
       </div>
     </footer>
   );

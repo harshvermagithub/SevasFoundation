@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Sevas Foundation | Heal, Enrich, Empower',
-  description: 'Support differently-abled lives with Sevas Foundation. Your donation funds surgeries, education, and skill training.',
+  title: 'Hi-Tech Artificial Limbs Center | Re-life Medical & Rehabilitation Services',
+  description: 'Premier rehabilitation services company focused on providing state-of-the-art Prosthetic & Orthotic services.',
 };
 
 export default function RootLayout({
