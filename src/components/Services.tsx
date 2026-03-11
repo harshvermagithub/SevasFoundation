@@ -23,7 +23,7 @@ export default function Services() {
         </h2>
         <p style={{
           textAlign: 'center',
-          color: 'rgba(255, 255, 255, 0.8)',
+          color: 'var(--text-muted)',
           fontSize: '1.2rem',
           maxWidth: '800px',
           margin: '0 auto 3rem',
@@ -40,7 +40,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={index} className="glass" style={{ padding: '1.5rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
               <span style={{ color: 'var(--primary)', fontSize: '1.2rem', marginTop: '0.2rem' }}>✦</span>
-              <p style={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.5, margin: 0 }}>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
                 {service}
               </p>
             </div>

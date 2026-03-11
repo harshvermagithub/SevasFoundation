@@ -11,6 +11,9 @@ export default function Hero() {
       paddingTop: '8rem',
     }}>
       <div className="container">
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+          <img src="/logo_white.png" alt="Sevas Foundation Logo" style={{ height: '150px', width: 'auto' }} />
+        </div>
         <h1 style={{
           fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
           fontWeight: 900,
@@ -34,7 +37,7 @@ export default function Hero() {
 
         <p style={{
           fontSize: '1.4rem',
-          color: 'rgba(255, 255, 255, 0.9)',
+          color: 'var(--text-muted)',
           maxWidth: '800px',
           margin: '0 auto 1.5rem',
           lineHeight: 1.6,
@@ -45,7 +48,7 @@ export default function Hero() {
 
         <p style={{
           fontSize: '1.1rem',
-          color: 'rgba(255, 255, 255, 0.7)',
+          color: 'var(--text-muted)',
           maxWidth: '800px',
           margin: '0 auto 3rem',
           lineHeight: 1.7,
@@ -71,15 +74,15 @@ export default function Hero() {
         }}>
           <div className="glass" style={{ padding: '2rem' }}>
             <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Global Standards</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.95rem' }}>We import systems from leading prosthetic and orthotic companies across the globe.</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>We import systems from leading prosthetic and orthotic companies across the globe.</p>
           </div>
           <div className="glass" style={{ padding: '2rem' }}>
             <h3 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>Highest Quality</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.95rem' }}>Assured quality of products and clinical services.</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Assured quality of products and clinical services.</p>
           </div>
           <div className="glass" style={{ padding: '2rem' }}>
             <h3 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>Comprehensive Care</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.95rem' }}>From pediatric to geriatric, serving low to high activity levels.</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>From pediatric to geriatric, serving low to high activity levels.</p>
           </div>
         </div>
       </div>

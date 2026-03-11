@@ -3,8 +3,9 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className="header-glass">
-      <Link href="/" className="header-logo">
-        Sevas <span className="glowing-text">Foundation</span>
+      <Link href="/" className="header-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <img src="/logo_white.png" alt="Sevas Foundation Logo" style={{ height: '40px', width: 'auto' }} />
+        <div>Sevas <span className="glowing-text">Foundation</span></div>
       </Link>
       
       <nav className="header-nav">

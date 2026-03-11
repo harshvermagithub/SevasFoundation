@@ -10,7 +10,7 @@ export default function ContactUs() {
         
         <p style={{
           textAlign: 'center',
-          color: 'rgba(255, 255, 255, 0.8)',
+          color: 'var(--text-muted)',
           fontSize: '1.2rem',
           maxWidth: '600px',
           margin: '0 auto 4rem',
@@ -28,7 +28,7 @@ export default function ContactUs() {
           <div className="glass" style={{ padding: '3rem', textAlign: 'center' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem', textShadow: '0 0 20px var(--primary)' }}>📍</div>
             <h3 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.3rem' }}>Address</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
               # 209, 100 Feet Ring Road,<br/>
               BSK 3rd Stage,<br/>
               Bengaluru - 560 085
@@ -38,7 +38,7 @@ export default function ContactUs() {
           <div className="glass" style={{ padding: '3rem', textAlign: 'center' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem', textShadow: '0 0 20px var(--secondary)' }}>📞</div>
             <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem', fontSize: '1.3rem' }}>Phone Numbers</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.8, margin: 0 }}>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, margin: 0 }}>
               +91 81399 55669<br/>
               +91 99861 44329<br/>
               +91 95387 94917<br/>
@@ -49,7 +49,7 @@ export default function ContactUs() {
           <div className="glass" style={{ padding: '3rem', textAlign: 'center' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem', textShadow: '0 0 20px var(--accent)' }}>📧</div>
             <h3 style={{ color: 'var(--accent)', marginBottom: '1rem', fontSize: '1.3rem' }}>Email Addresses</h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.8, margin: 0, wordBreak: 'break-all' }}>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, margin: 0, wordBreak: 'break-all' }}>
               hitechartificiallimbcentre@gmail.com<br/><br/>
               relifehealthcarehospital@gmail.com
             </p>
