@@ -18,6 +18,12 @@ export default function ContactUs() {
           We are here to assist you with your rehabilitation and mobility needs.
         </p>
 
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem' }}>
+          <div style={{ borderRadius: '16px', overflow: 'hidden', maxWidth: '800px', width: '100%', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)', border: '2px solid var(--glass-border)' }}>
+            <img src="/contact_us_reception_1773246589792.png" alt="Friendly Reception" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+        </div>
+
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',

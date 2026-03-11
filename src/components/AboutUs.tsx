@@ -6,10 +6,15 @@ export default function AboutUs() {
           Company <span className="glowing-text">Profile</span>
         </h2>
         
-        <div className="glass" style={{ padding: '3rem', marginBottom: '2rem' }}>
-          <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-            <strong>Sevas Foundation Trust</strong> is managed by a dedicated Board of Trustees and operated daily by our Managing Trustee. Our ongoing effort is to introduce, adapt, and diffuse hi-technology innovations in India, leading to state-of-the-art technology in the Prosthetics & Orthotics field being brought into the country to serve those in need.
-          </p>
+        <div className="glass" style={{ padding: '3rem', marginBottom: '2rem', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
+          <div style={{ flex: '1 1 300px' }}>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+              <strong>Sevas Foundation Trust</strong> is managed by a dedicated Board of Trustees and operated daily by our Managing Trustee. Our ongoing effort is to introduce, adapt, and diffuse hi-technology innovations in India, leading to state-of-the-art technology in the Prosthetics & Orthotics field being brought into the country to serve those in need.
+            </p>
+          </div>
+          <div style={{ flex: '1 1 300px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
+            <img src="/about_us_team_1773246462726.png" alt="Our Team" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
         </div>
 
         <div style={{

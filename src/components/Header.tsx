@@ -54,7 +54,7 @@ export default function Header() {
           </div>
         </div>
 
-        <Link href="#contact" className="nav-link">Contact</Link>
+        <Link href="/contact" className="nav-link">Contact</Link>
         <Link href="/donate" className="btn-primary nav-btn" style={{ marginLeft: '1rem' }}>Donate Now</Link>
       </nav>
       </div>

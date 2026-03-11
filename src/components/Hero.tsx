@@ -7,55 +7,65 @@ export default function Hero() {
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
           <img src="/logo_white.png" alt="Sevas Foundation Logo" style={{ height: '150px', width: 'auto' }} />
         </div>
-        <h1 style={{
-          fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-          fontWeight: 900,
-          lineHeight: 1.1,
-          marginBottom: '1rem',
-        }}>
-          Sevas <br />
-          <span className="glowing-text">Foundation</span>
-        </h1>
-        
-        <h2 style={{
-          fontSize: '1.2rem',
-          color: 'var(--primary)',
-          fontWeight: 600,
-          marginBottom: '2rem',
-          textTransform: 'uppercase',
-          letterSpacing: '1px',
-        }}>
-          Registered NGO under Trust Act, Bangalore
-        </h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center', marginBottom: '4rem' }}>
+          <div style={{ flex: '1 1 500px', textAlign: 'left' }}>
+            <h1 style={{
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontWeight: 900,
+              lineHeight: 1.1,
+              marginBottom: '1rem',
+            }}>
+              Sevas <br />
+              <span className="glowing-text">Foundation</span>
+            </h1>
+            
+            <h2 style={{
+              fontSize: '1.2rem',
+              color: 'var(--primary)',
+              fontWeight: 600,
+              marginBottom: '2rem',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+            }}>
+              Registered NGO under Trust Act, Bangalore
+            </h2>
 
-        <p style={{
-          fontSize: '1.4rem',
-          color: 'var(--text-muted)',
-          maxWidth: '800px',
-          margin: '0 auto 1.5rem',
-          lineHeight: 1.6,
-          fontStyle: 'italic',
-        }}>
-          &quot;It&apos;s not our disabilities, it&apos;s our abilities that count...&quot;
-        </p>
+            <p style={{
+              fontSize: '1.4rem',
+              color: 'var(--text-muted)',
+              maxWidth: '800px',
+              marginBottom: '1.5rem',
+              lineHeight: 1.6,
+              fontStyle: 'italic',
+            }}>
+              &quot;It&apos;s not our disabilities, it&apos;s our abilities that count...&quot;
+            </p>
 
-        <p style={{
-          fontSize: '1.1rem',
-          color: 'var(--text-muted)',
-          maxWidth: '800px',
-          margin: '0 auto 3rem',
-          lineHeight: 1.7,
-        }}>
-          Welcome to Sevas Foundation. We are a premier rehabilitation NGO focused on providing state-of-the-art Prosthetic & Orthotic services through our dedicated network. We have built our reputation on innovation, quality services, and bridging global hi-tech innovations and compassion to empower lives in India.
-        </p>
-        
-        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/services" className="btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
-            Explore Our Services
-          </Link>
-          <Link href="/#contact" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
-            Support Our Cause
-          </Link>
+            <p style={{
+              fontSize: '1.1rem',
+              color: 'var(--text-muted)',
+              maxWidth: '800px',
+              marginBottom: '3rem',
+              lineHeight: 1.7,
+            }}>
+              Welcome to Sevas Foundation. We are a premier rehabilitation NGO focused on providing state-of-the-art Prosthetic & Orthotic services through our dedicated network. We have built our reputation on innovation, quality services, and bridging global hi-tech innovations and compassion to empower lives in India.
+            </p>
+            
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <Link href="/services" className="btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
+                Explore Our Services
+              </Link>
+              <Link href="/contact" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
+                Support Our Cause
+              </Link>
+            </div>
+          </div>
+          
+          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '4px solid white' }}>
+               <img src="/home_hero_new_1773246572349.png" alt="Empowering Lives" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
+          </div>
         </div>
 
         <div style={{

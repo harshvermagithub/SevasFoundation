@@ -9,39 +9,54 @@ export default function Products() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           
           {/* Lower Extremity */}
-          <div className="glass" style={{ padding: '3rem' }}>
-            <h3 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.5rem', borderBottom: '1px solid var(--text-muted)', paddingBottom: '0.5rem' }}>
-              Lower Extremity Prosthetics
-            </h3>
-            <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.5rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              <li><strong>Above Knee Prosthesis:</strong> Options tailored for Low, Average, and High Activity levels (featuring safety, independent donning/doffing, and dynamic responses).</li>
-              <li><strong>Below Knee Prosthesis:</strong> Designed for maximum comfort, robustness, and functionality across all activity levels.</li>
-              <li><strong>Socket Technology:</strong> Including standard belts, locks with gel liners, passive/active vacuums, and carbon fiber sockets.</li>
-              <li><strong>Prosthetic Feet Range:</strong> From K1 (Low Activity) like Sach Foot to K3 (High Activity) like Flex Foot and Carbon Fibre Feet. Featuring proprietary designs like the S-PACE Foot and GRACE Foot.</li>
-            </ul>
+          <div className="glass" style={{ padding: '3rem', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <div style={{ flex: '1 1 400px' }}>
+              <h3 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.5rem', borderBottom: '1px solid var(--text-muted)', paddingBottom: '0.5rem' }}>
+                Lower Extremity Prosthetics
+              </h3>
+              <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.5rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                <li><strong>Above Knee Prosthesis:</strong> Options tailored for Low, Average, and High Activity levels (featuring safety, independent donning/doffing, and dynamic responses).</li>
+                <li><strong>Below Knee Prosthesis:</strong> Designed for maximum comfort, robustness, and functionality across all activity levels.</li>
+                <li><strong>Socket Technology:</strong> Including standard belts, locks with gel liners, passive/active vacuums, and carbon fiber sockets.</li>
+                <li><strong>Prosthetic Feet Range:</strong> From K1 (Low Activity) like Sach Foot to K3 (High Activity) like Flex Foot and Carbon Fibre Feet. Featuring proprietary designs like the S-PACE Foot and GRACE Foot.</li>
+              </ul>
+            </div>
+            <div style={{ flex: '1 1 300px', borderRadius: '12px', overflow: 'hidden' }}>
+              <img src="/product_leg_1773246517860.png" alt="Prosthetic Leg" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
           </div>
 
           {/* Upper Extremity */}
-          <div className="glass" style={{ padding: '3rem' }}>
-            <h3 style={{ color: 'var(--secondary)', marginBottom: '1.5rem', fontSize: '1.5rem', borderBottom: '1px solid var(--text-muted)', paddingBottom: '0.5rem' }}>
-              Upper Extremity Prosthetics
-            </h3>
-            <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.5rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              <li><strong>Above & Below Elbow Options:</strong> Cosmetic hands, mechanical hands with harness cables, Myo-Electric hands, and i-Digit limbs.</li>
-            </ul>
+          <div className="glass" style={{ padding: '3rem', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', flexDirection: 'row-reverse' }}>
+            <div style={{ flex: '1 1 400px' }}>
+              <h3 style={{ color: 'var(--secondary)', marginBottom: '1.5rem', fontSize: '1.5rem', borderBottom: '1px solid var(--text-muted)', paddingBottom: '0.5rem' }}>
+                Upper Extremity Prosthetics
+              </h3>
+              <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.5rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                <li><strong>Above & Below Elbow Options:</strong> Cosmetic hands, mechanical hands with harness cables, Myo-Electric hands, and i-Digit limbs.</li>
+              </ul>
+            </div>
+            <div style={{ flex: '1 1 300px', borderRadius: '12px', overflow: 'hidden' }}>
+              <img src="/product_arm_1773246539931.png" alt="Prosthetic Arm" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
           </div>
 
           {/* Custom Orthotics */}
-          <div className="glass" style={{ padding: '3rem' }}>
-            <h3 style={{ color: 'var(--accent)', marginBottom: '1.5rem', fontSize: '1.5rem', borderBottom: '1px solid var(--text-muted)', paddingBottom: '0.5rem' }}>
-              Custom Orthotics (Bracing & Supports)
-            </h3>
-            <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.5rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              <li><strong>Foot & Ankle:</strong> CAD-CAM Milled Insoles, Ankle Foot Orthosis (AFO), CROW Walkers, and Partial Foot Orthoprosthesis.</li>
-              <li><strong>Knee & Hip:</strong> Knee Orthosis (OA and Turn Buckle), KAFO, Femur Fracture Orthosis, and Hip Abduction Orthosis.</li>
-              <li><strong>Upper Extremity:</strong> WHO static/dynamic splints, Aeroplane splints, and Humerus Fracture Orthosis.</li>
-              <li><strong>Spinal Orthotics:</strong> Lumbo Sacral Orthosis (LSO), TLSO, CTLSO (Milwaukee/Scoliosis Brace), and Hyperextension Braces.</li>
-            </ul>
+          <div className="glass" style={{ padding: '3rem', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <div style={{ flex: '1 1 400px' }}>
+              <h3 style={{ color: 'var(--accent)', marginBottom: '1.5rem', fontSize: '1.5rem', borderBottom: '1px solid var(--text-muted)', paddingBottom: '0.5rem' }}>
+                Custom Orthotics (Bracing & Supports)
+              </h3>
+              <ul style={{ color: 'var(--text-muted)', paddingLeft: '1.5rem', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                <li><strong>Foot & Ankle:</strong> CAD-CAM Milled Insoles, Ankle Foot Orthosis (AFO), CROW Walkers, and Partial Foot Orthoprosthesis.</li>
+                <li><strong>Knee & Hip:</strong> Knee Orthosis (OA and Turn Buckle), KAFO, Femur Fracture Orthosis, and Hip Abduction Orthosis.</li>
+                <li><strong>Upper Extremity:</strong> WHO static/dynamic splints, Aeroplane splints, and Humerus Fracture Orthosis.</li>
+                <li><strong>Spinal Orthotics:</strong> Lumbo Sacral Orthosis (LSO), TLSO, CTLSO (Milwaukee/Scoliosis Brace), and Hyperextension Braces.</li>
+              </ul>
+            </div>
+            <div style={{ flex: '1 1 300px', borderRadius: '12px', overflow: 'hidden' }}>
+              <img src="/product_calliper_1773246557084.png" alt="Orthotic Callipers" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
           </div>
 
           {/* Paediatric & Specialized */}

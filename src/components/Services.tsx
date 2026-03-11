@@ -32,19 +32,26 @@ export default function Services() {
           We offer a comprehensive range of clinical and rehabilitation services tailored to individual needs:
         </p>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem'
-        }}>
-          {services.map((service, index) => (
-            <div key={index} className="glass" style={{ padding: '1.5rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-              <span style={{ color: 'var(--primary)', fontSize: '1.2rem', marginTop: '0.2rem' }}>✦</span>
-              <p style={{ color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
-                {service}
-              </p>
-            </div>
-          ))}
+        <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            {services.map((service, index) => (
+              <div key={index} className="glass" style={{ padding: '1.5rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                <span style={{ color: 'var(--primary)', fontSize: '1.2rem', marginTop: '0.2rem' }}>✦</span>
+                <p style={{ color: 'var(--text-muted)', lineHeight: 1.5, margin: 0 }}>
+                  {service}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)' }}>
+               <img src="/service_prosthetic_1773246481549.png" alt="Clinical Prosthetic Care" style={{ width: '100%', height: 'auto', display: 'block' }} />
+             </div>
+             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)' }}>
+               <img src="/service_physio_1773246501181.png" alt="Physiotherapy Services" style={{ width: '100%', height: 'auto', display: 'block' }} />
+             </div>
+          </div>
         </div>
       </div>
     </section>
