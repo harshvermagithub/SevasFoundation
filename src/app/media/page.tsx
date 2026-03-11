@@ -36,11 +36,17 @@ export default function MediaPage() {
                  <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
                    <img src="/limb.png" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Prosthetics" />
                  </div>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: 'var(--light-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                   <span style={{ color: 'var(--text-muted)' }}>Camp Image 1</span>
+                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
+                   <img src="/media__1773247041332.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Patient Recovery" />
                  </div>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: 'var(--light-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                   <span style={{ color: 'var(--text-muted)' }}>Camp Image 2</span>
+                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
+                   <img src="/media__1773247041354.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="New Fitted Leg" />
+                 </div>
+                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
+                   <img src="/media__1773247041371.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Elderly Patient Help" />
+                 </div>
+                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
+                   <img src="/media__1773247041410.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Staff and Patient" />
                  </div>
               </div>
             </div>
