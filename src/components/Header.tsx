@@ -13,7 +13,8 @@ export default function Header() {
         <Link href="/about" className="nav-link">About Us</Link>
         <Link href="/services" className="nav-link">Services</Link>
         <Link href="/products" className="nav-link">Products</Link>
-        <Link href="/#contact" className="btn-primary nav-btn">Contact Us</Link>
+        <Link href="#contact" className="nav-link">Contact Us</Link>
+        <Link href="#donate" className="btn-primary nav-btn" style={{ marginLeft: '1rem' }}>Donate Now</Link>
       </nav>
     </header>
   );
