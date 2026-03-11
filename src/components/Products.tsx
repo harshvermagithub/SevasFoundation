@@ -1,6 +1,6 @@
 export default function Products() {
   return (
-    <section id="products" className="section" style={{ background: 'var(--text-muted)' }}>
+    <section id="products" className="section" style={{ background: 'var(--light-orange)' }}>
       <div className="container">
         <h2 className="section-title">
           Products & <span className="glowing-text">Prosthetics</span>

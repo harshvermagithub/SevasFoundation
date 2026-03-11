@@ -31,10 +31,10 @@ export default function Footer() {
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Quick Links</h3>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
             <li><Link href="/" style={{ color: 'var(--text-muted)' }}>Home</Link></li>
-            <li><Link href="#about" style={{ color: 'var(--text-muted)' }}>About Us</Link></li>
-            <li><Link href="#services" style={{ color: 'var(--text-muted)' }}>Services</Link></li>
-            <li><Link href="#products" style={{ color: 'var(--text-muted)' }}>Products & Prosthetics</Link></li>
-            <li><Link href="#contact" style={{ color: 'var(--text-muted)' }}>Contact Us</Link></li>
+            <li><Link href="/about" style={{ color: 'var(--text-muted)' }}>About Us</Link></li>
+            <li><Link href="/services" style={{ color: 'var(--text-muted)' }}>Services</Link></li>
+            <li><Link href="/products" style={{ color: 'var(--text-muted)' }}>Products & Prosthetics</Link></li>
+            <li><Link href="/#contact" style={{ color: 'var(--text-muted)' }}>Contact Us</Link></li>
           </ul>
         </div>
         

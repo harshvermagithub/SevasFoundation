@@ -16,7 +16,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="section">
+    <section id="services" className="section" style={{ background: 'var(--light-orange)' }}>
       <div className="container">
         <h2 className="section-title">
           Our <span className="glowing-text">Services</span>

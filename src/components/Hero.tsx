@@ -57,10 +57,10 @@ export default function Hero() {
         </p>
         
         <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="#services" className="btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
+          <Link href="/services" className="btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
             Explore Our Services
           </Link>
-          <Link href="#contact" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
+          <Link href="/#contact" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
             Support Our Cause
           </Link>
         </div>

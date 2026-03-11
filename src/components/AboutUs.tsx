@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section id="about" className="section" style={{ background: 'var(--text-muted)' }}>
+    <section id="about" className="section" style={{ background: 'var(--light-orange)' }}>
       <div className="container">
         <h2 className="section-title">
           Company <span className="glowing-text">Profile</span>
