@@ -28,10 +28,13 @@ export default function LimbsInfo() {
           <div className="glass" style={{ padding: '2rem', background: 'var(--light-orange)', border: '1px solid var(--glass-border)' }}>
             <h3 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.4rem' }}>Our Manufacturing Excellence</h3>
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
-              Our team of specialised prosthetics and orthotics experts take careful measurements and ensures that all the limbs manufactured at our facility are customised according to the exact measurements of the beneficiaries to ensure a perfect fit.
+              We have established a highly modernised manufacturing centre for artificial limbs, where specially-abled individuals from marginalized sections of society can receive comprehensive rehabilitation and custom-fitted appliances completely free of cost.
+            </p>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1rem' }}>
+              Our dedicated team of specialised prosthetics and orthotics experts takes exact, careful measurements to ensure that every single prosthetic arm or leg manufactured at our facility offers a perfect, comfortable fit for the beneficiary.
             </p>
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.7 }}>
-              We also ensure that the beneficiaries receiving the artificial arm or prosthetic leg are provided with complete assistance and support by our specialists to get accustomed to their new limbs and their functionality.
+              Beyond just providing the limb, we are committed to full rehabilitation. Beneficiaries receive absolute, unwavering assistance and support from our specialists to help them get wholly accustomed to the functionality and usage of their new artificial limbs.
             </p>
           </div>
         </div>
