@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Hi-Tech Artificial Limbs Center | Re-life Medical & Rehabilitation Services',
+  title: 'Sevas Foundation | Re-life Medical & Rehabilitation Services',
   description: 'Premier rehabilitation services company focused on providing state-of-the-art Prosthetic & Orthotic services.',
 };
 

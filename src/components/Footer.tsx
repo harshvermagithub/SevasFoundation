@@ -20,7 +20,7 @@ export default function Footer() {
             Re-life Medical & <br/><span className="glowing-text">Rehabilitation Services Pvt. Ltd.</span>
           </h2>
           <h3 style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
-            Hi-Tech Artificial Limbs Center
+            Sevas Foundation
           </h3>
           <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
             &quot;It&apos;s not our disabilities, it&apos;s our abilities that count...&quot;

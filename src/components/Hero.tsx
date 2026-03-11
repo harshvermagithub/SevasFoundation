@@ -17,8 +17,8 @@ export default function Hero() {
           lineHeight: 1.1,
           marginBottom: '1rem',
         }}>
-          HI-TECH ARTIFICIAL <br />
-          <span className="glowing-text">LIMBS CENTER</span>
+          Sevas <br />
+          <span className="glowing-text">Foundation</span>
         </h1>
         
         <h2 style={{
