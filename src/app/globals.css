@@ -76,6 +76,15 @@ a {
   text-align: center;
 }
 
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 8rem;
+}
+
 /* Buttons */
 .btn-primary {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -232,6 +241,9 @@ a {
   }
   .header-logo {
     font-size: 1.2rem;
+  }
+  .hero-section {
+    padding-top: 14rem;
   }
 }
 
