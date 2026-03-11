@@ -32,7 +32,7 @@ export default function Hero() {
           textTransform: 'uppercase',
           letterSpacing: '1px',
         }}>
-          A Unit of Re-life Medical & Rehabilitation Services Pvt. Ltd.
+          Registered NGO under Trust Act, Bangalore
         </h2>
 
         <p style={{
@@ -53,7 +53,7 @@ export default function Hero() {
           margin: '0 auto 3rem',
           lineHeight: 1.7,
         }}>
-          Welcome to Re-life Medical & Rehabilitation Services Pvt. Ltd. We are a premier rehabilitation services company focused on providing state-of-the-art Prosthetic & Orthotic services through our dedicated clinics and dealer networks. We have built our reputation on innovation, quality services, and exceptional customer care, bringing global hi-tech innovations to India.
+          Welcome to Sevas Foundation. We are a premier rehabilitation NGO focused on providing state-of-the-art Prosthetic & Orthotic services through our dedicated network. We have built our reputation on innovation, quality services, and bridging global hi-tech innovations and compassion to empower lives in India.
         </p>
         
         <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -61,7 +61,7 @@ export default function Hero() {
             Explore Our Services
           </Link>
           <Link href="#contact" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>
-            Book an Appointment
+            Support Our Cause
           </Link>
         </div>
 

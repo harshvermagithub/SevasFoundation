@@ -17,10 +17,10 @@ export default function Footer() {
       }}>
         <div style={{ flex: '1 1 300px' }}>
           <h2 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '0.5rem' }}>
-            Re-life Medical & <br/><span className="glowing-text">Rehabilitation Services Pvt. Ltd.</span>
+            Sevas <br/><span className="glowing-text">Foundation Trust</span>
           </h2>
           <h3 style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-            Sevas Foundation
+            Registered NGO
           </h3>
           <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
             &quot;It&apos;s not our disabilities, it&apos;s our abilities that count...&quot;
@@ -41,13 +41,13 @@ export default function Footer() {
         <div style={{ flex: '1 1 300px' }}>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--secondary)' }}>Contact</h3>
           <p style={{ color: 'var(--text-muted)', marginBottom: '0.5rem', lineHeight: 1.5 }}>
-            📍 # 209, 100 Feet Ring Road, BSK 3rd Stage, Bengaluru - 560 085
+            📍 No 208 & 209, 100 feet ring road, 4th Block, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085
           </p>
           <p style={{ color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-            📧 hitechartificiallimbcentre@gmail.com
+            📧 sevasfoundationtrustbangalore@gmail.com
           </p>
           <p style={{ color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-            📞 +91 81399 55669 / 99861 44329
+            📞 +91 88843 44199 / 95387 94917 / 90088 55404
           </p>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function Footer() {
         color: 'var(--text-muted)',
         fontSize: '0.9rem'
       }}>
-        © {new Date().getFullYear()} Re-life Medical & Rehabilitation Services Pvt. Ltd. All rights reserved.
+        © {new Date().getFullYear()} Sevas Foundation Trust. All rights reserved.
       </div>
     </footer>
   );

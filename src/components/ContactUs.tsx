@@ -29,9 +29,9 @@ export default function ContactUs() {
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem', textShadow: '0 0 20px var(--primary)' }}>📍</div>
             <h3 style={{ color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.3rem' }}>Address</h3>
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
-              # 209, 100 Feet Ring Road,<br/>
-              BSK 3rd Stage,<br/>
-              Bengaluru - 560 085
+              No 208 & 209, 100 feet ring road,<br/>
+              4th Block, Banashankari 3rd Stage, Banashankari,<br/>
+              Bengaluru, Karnataka 560085
             </p>
           </div>
 
@@ -39,10 +39,9 @@ export default function ContactUs() {
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem', textShadow: '0 0 20px var(--secondary)' }}>📞</div>
             <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem', fontSize: '1.3rem' }}>Phone Numbers</h3>
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, margin: 0 }}>
-              +91 81399 55669<br/>
-              +91 99861 44329<br/>
+              +91 88843 44199<br/>
               +91 95387 94917<br/>
-              +91 88843 44199
+              +91 90088 55404
             </p>
           </div>
 
@@ -50,8 +49,7 @@ export default function ContactUs() {
             <div style={{ fontSize: '3rem', marginBottom: '1.5rem', textShadow: '0 0 20px var(--accent)' }}>📧</div>
             <h3 style={{ color: 'var(--accent)', marginBottom: '1rem', fontSize: '1.3rem' }}>Email Addresses</h3>
             <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, margin: 0, wordBreak: 'break-all' }}>
-              hitechartificiallimbcentre@gmail.com<br/><br/>
-              relifehealthcarehospital@gmail.com
+              sevasfoundationtrustbangalore@gmail.com
             </p>
           </div>
         </div>
