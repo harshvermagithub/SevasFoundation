@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer style={{
@@ -21,18 +23,18 @@ export default function Footer() {
             Hi-Tech Artificial Limbs Center
           </h3>
           <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
-            "It's not our disabilities, it's our abilities that count..."
+            &quot;It&apos;s not our disabilities, it&apos;s our abilities that count...&quot;
           </p>
         </div>
         
         <div style={{ flex: '1 1 200px' }}>
           <h3 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Quick Links</h3>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-            <li><a href="/" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Home</a></li>
-            <li><a href="#about" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>About Us</a></li>
-            <li><a href="#services" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Services</a></li>
-            <li><a href="#products" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Products & Prosthetics</a></li>
-            <li><a href="#contact" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Contact Us</a></li>
+            <li><Link href="/" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Home</Link></li>
+            <li><Link href="#about" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>About Us</Link></li>
+            <li><Link href="#services" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Services</Link></li>
+            <li><Link href="#products" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Products & Prosthetics</Link></li>
+            <li><Link href="#contact" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Contact Us</Link></li>
           </ul>
         </div>
         
