@@ -1,11 +1,19 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function MediaPage() {
   const [activeTab, setActiveTab] = useState('gallery');
+  const [db, setDb] = useState<{ gallery: string[], videos: string[], events: any[] }>({ gallery: [], videos: [], events: [] });
+
+  useEffect(() => {
+    fetch('/api/admin')
+      .then(res => res.json())
+      .then(data => setDb(data));
+  }, []);
 
   const tabs = [
     { id: 'gallery', label: 'Images Gallery' },
+    { id: 'videos', label: 'Videos' },
     { id: 'social', label: 'Social Media' },
     { id: 'events', label: 'Events' }
   ];
@@ -33,52 +41,53 @@ export default function MediaPage() {
             <div style={{ textAlign: 'center' }}>
               <h2 style={{ color: 'var(--primary)', marginBottom: '2rem' }}>Our Work in Action</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
-                   <img src="/limb.png" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Prosthetics" />
-                 </div>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
-                   <img src="/media__1773247041332.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Patient Recovery" />
-                 </div>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
-                   <img src="/media__1773247041354.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="New Fitted Leg" />
-                 </div>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
-                   <img src="/media__1773247041371.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Elderly Patient Help" />
-                 </div>
-                 <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc' }}>
-                   <img src="/media__1773247041410.jpg" style={{width: '100%', height: '100%', objectFit: 'cover'}} alt="Staff and Patient" />
-                 </div>
+                {db.gallery.map((img, i) => (
+                  <div key={`gallery-img-${img}-${i}`} style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', height: '250px', background: '#ccc', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+                    <img src={img.startsWith('http') ? img : `/media/Clients/${img}`} style={{width: '100%', height: '100%', objectFit: 'cover'}} alt={`Gallery image ${i+1}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'videos' && (
+            <div style={{ textAlign: 'center' }}>
+              <h2 style={{ color: 'var(--secondary)', marginBottom: '2rem' }}>Foundation Videos</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                {db.videos.map((vid, i) => (
+                  <div key={`gallery-vid-${vid}-${i}`} style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', background: '#000', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+                    <video controls style={{ width: '100%', height: 'auto', display: 'block' }}>
+                      <source src={`/media/Video/${vid}`} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                ))}
               </div>
             </div>
           )}
 
           {activeTab === 'social' && (
             <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-              <h2 style={{ color: 'var(--secondary)', marginBottom: '2rem' }}>Connect With Us</h2>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>Stay updated with our daily outreach and success stories across all major platforms!</p>
-              <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-                 <a href="#" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '8px' }}>Facebook</a>
-                 <a href="#" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '8px' }}>Instagram</a>
-                 <a href="#" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '8px' }}>Twitter (X)</a>
-              </div>
+               <h2 style={{ color: 'var(--secondary)', marginBottom: '2rem' }}>Connect With Us</h2>
+               <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>Stay updated with our daily outreach and success stories across all major platforms!</p>
+               <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+                  <a href="#" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '8px' }}>Facebook</a>
+                  <a href="#" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '8px' }}>Instagram</a>
+                  <a href="#" className="btn-outline" style={{ fontSize: '1.2rem', padding: '1rem 2rem', borderRadius: '8px' }}>Twitter (X)</a>
+               </div>
             </div>
           )}
 
           {activeTab === 'events' && (
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
               <h2 style={{ color: 'var(--accent)', marginBottom: '2rem', textAlign: 'center' }}>Upcoming & Ongoing Events</h2>
-              
-              <div className="glass" style={{ padding: '2rem', marginBottom: '1.5rem', background: '#fff' }}>
-                 <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Free Artificial Limb Distribution Camp - Rural Bangalore</h3>
-                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>📅 October 15, 2026 | 📍 Bangalore Rural District Camp</p>
-                 <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>We will be hosting a massive free limb measurement and distribution camp for over 500 pre-registered individuals in rural Bangalore.</p>
-              </div>
-
-              <div className="glass" style={{ padding: '2rem', background: '#fff' }}>
-                 <h3 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>Prosthetics Awareness Seminar</h3>
-                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>📅 November 02, 2026 | 📍 Jayanagar Medical Assembly Hall</p>
-                 <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>A comprehensive seminar led by top orthotics aiming to educate families and practitioners on care and customisation of artificial limbs.</p>
-              </div>
+              {db.events.map((event: any, i) => (
+                <div key={`event-card-${event.id || i}`} className="glass" style={{ padding: '2rem', marginBottom: '1.5rem', background: '#fff' }}>
+                   <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>{event.title}</h3>
+                   <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>📅 {event.date} | 📍 {event.location}</p>
+                   <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>{event.description}</p>
+                </div>
+              ))}
             </div>
           )}
         </div>

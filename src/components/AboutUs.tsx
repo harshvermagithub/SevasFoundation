@@ -6,14 +6,29 @@ export default function AboutUs() {
           Company <span className="glowing-text">Profile</span>
         </h2>
         
-        <div className="glass" style={{ padding: '3rem', marginBottom: '2rem', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
-          <div style={{ flex: '1 1 300px' }}>
-            <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+        <div className="glass" style={{ padding: '3rem', marginBottom: '2rem', textAlign: 'center' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto 3rem' }}>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '1.2rem' }}>
               <strong>Sevas Foundation Trust</strong> is managed by a dedicated Board of Trustees and operated daily by our Managing Trustee. Our ongoing effort is to introduce, adapt, and diffuse hi-technology innovations in India, leading to state-of-the-art technology in the Prosthetics & Orthotics field being brought into the country to serve those in need.
             </p>
           </div>
-          <div style={{ flex: '1 1 300px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
-            <img src="/about_us_team_1773246462726.png" alt="Our Team" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', 
+            gap: '1.5rem',
+            justifyContent: 'center',
+            maxWidth: '1000px',
+            margin: '0 auto'
+          }}>
+            <img src="/media/About/profile (1).jpeg" alt="Chairman - SHIVANAND C.V" title="SHIVANAND C.V (Chairman)" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (2).jpeg" alt="Trustee - ARJUN M REVANKAR" title="ARJUN M REVANKAR (Trustee)" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (3).jpeg" alt="Trustee - Dr. SUPRIYA SHANKAR" title="Dr. SUPRIYA SHANKAR (Trustee)" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (4).jpeg" alt="Trustee Profile 4" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (5).jpeg" alt="Trustee Profile 5" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (6).jpeg" alt="Trustee Profile 6" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (7).jpeg" alt="Trustee - Dr. SPOORTHI S" title="Dr. SPOORTHI S (Trustee)" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+            <img src="/media/About/profile (8).jpeg" alt="Trustee Profile 8" style={{ width: '100%', height: 'auto', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
           </div>
         </div>
 

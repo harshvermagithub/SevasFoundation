@@ -21,7 +21,7 @@ export default function LimbsInfo() {
               boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)',
               border: '2px solid var(--glass-border)'
             }}>
-              <img src="/limb.png" alt="Advanced Artificial Limb Being Fitted" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src="/media/Clients/WhatsApp Image 2026-03-14 at 17.38.07.jpeg" alt="Advanced Artificial Limb Being Fitted" style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '9/16', objectFit: 'cover' }} />
             </div>
           </div>
 
