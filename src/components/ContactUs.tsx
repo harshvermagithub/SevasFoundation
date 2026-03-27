@@ -19,8 +19,19 @@ export default function ContactUs() {
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem' }}>
-          <div style={{ borderRadius: '16px', overflow: 'hidden', maxWidth: '400px', width: '100%', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)', border: '2px solid var(--glass-border)' }}>
-            <img src="/media/Clients/WhatsApp Image 2026-03-14 at 17.37.51.jpeg" alt="Friendly Reception" style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '9/16', objectFit: 'cover' }} />
+          <div style={{ borderRadius: '16px', overflow: 'hidden', maxWidth: '600px', width: '100%', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.1)', border: '2px solid var(--glass-border)', position: 'relative' }}>
+            <img 
+              src="/media/Clients/sevas_contact_banner.jpg" 
+              alt="Sevas Foundation Artificial Limbs Centre" 
+              style={{ 
+                width: '100%', 
+                height: 'auto', 
+                display: 'block',
+                clipPath: 'inset(0 3% 3% 0)',
+                transform: 'scale(1.04)',
+                transformOrigin: 'top left'
+              }} 
+            />
           </div>
         </div>
 

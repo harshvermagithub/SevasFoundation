@@ -29,13 +29,28 @@ export default function AdminPage() {
   };
 
   const handleAddData = async (type: string, payload: any) => {
-    const res = await fetch('/api/admin', {
-      method: 'POST',
-      body: JSON.stringify({ type, ...payload }),
-      headers: { 'Content-Type': 'application/json' }
-    });
+    let res;
+    if (payload.file) {
+      const formData = new FormData();
+      formData.append('type', type);
+      formData.append('file', payload.file);
+      res = await fetch('/api/admin', {
+        method: 'POST',
+        body: formData,
+      });
+    } else {
+      res = await fetch('/api/admin', {
+        method: 'POST',
+        body: JSON.stringify({ type, ...payload }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
     const result = await res.json();
-    setDb(result.data);
+    if (result.success) {
+      setDb(result.data);
+    } else {
+      alert(result.error || 'Failed to update data');
+    }
   };
 
   if (!isLoggedIn) {
@@ -104,8 +119,8 @@ export default function AdminPage() {
 
           {/* Main Area */}
           <div className="glass" style={{ flex: 1, padding: '2rem' }}>
-            {activeMenu === 'gallery' && <GalleryManager images={db.gallery} onAdd={(img) => handleAddData('gallery', { image: img })} onDelete={(img) => handleAddData('delete_gallery', { image: img })} />}
-            {activeMenu === 'videos' && <VideoManager videos={db.videos} onAdd={(vid) => handleAddData('video', { video: vid })} />}
+            {activeMenu === 'gallery' && <GalleryManager images={db.gallery} onAdd={(file) => handleAddData('gallery', { file })} onDelete={(img) => handleAddData('delete_gallery', { image: img })} />}
+            {activeMenu === 'videos' && <VideoManager videos={db.videos} onAdd={(file) => handleAddData('video', { file })} />}
             {activeMenu === 'events' && <EventsManager events={db.events} onAdd={(ev) => handleAddData('event', { event: ev })} onDelete={(id) => handleAddData('delete_event', { id })} />}
             {activeMenu === 'settings' && <SettingsManager currentPassword={currentPassword} onPasswordUpdate={setCurrentPassword} />}
           </div>
@@ -115,19 +130,35 @@ export default function AdminPage() {
   );
 }
 
-function GalleryManager({ images, onAdd, onDelete }: { images: string[], onAdd: (img: string) => void, onDelete: (img: string) => void }) {
-  const [newImg, setNewImg] = useState('');
+function GalleryManager({ images, onAdd, onDelete }: { images: string[], onAdd: (file: File) => void, onDelete: (img: string) => void }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+
+  const handleUpload = async () => {
+    if (!file) return;
+    setUploading(true);
+    await onAdd(file);
+    setFile(null);
+    setUploading(false);
+  };
+
   return (
     <div>
       <h2 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Images Gallery</h2>
       <div style={{ marginBottom: '2rem', padding: '1.5rem', border: '2px dashed var(--glass-border)', borderRadius: '12px' }}>
         <input 
-          placeholder="Image File Name (e.g., logo.png or Client-Photo.jpeg)" 
-          value={newImg}
-          onChange={(e) => setNewImg(e.target.value)}
-          style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'var(--background)', marginBottom: '1rem' }}
+          type="file"
+          accept="image/*"
+          onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
+          style={{ width: '100%', marginBottom: '1rem' }}
         />
-        <button onClick={() => { onAdd(newImg); setNewImg(''); }} className="btn-primary">Add to Front-End Gallery</button>
+        <button 
+          onClick={handleUpload} 
+          className="btn-primary" 
+          disabled={!file || uploading}
+        >
+          {uploading ? 'Uploading...' : 'Upload Image to Gallery'}
+        </button>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '1rem' }}>
         {images.map((img, idx) => (
@@ -141,19 +172,35 @@ function GalleryManager({ images, onAdd, onDelete }: { images: string[], onAdd: 
   );
 }
 
-function VideoManager({ videos, onAdd }: { videos: string[], onAdd: (vid: string) => void }) {
-  const [newVid, setNewVid] = useState('');
+function VideoManager({ videos, onAdd }: { videos: string[], onAdd: (file: File) => void }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+
+  const handleUpload = async () => {
+    if (!file) return;
+    setUploading(true);
+    await onAdd(file);
+    setFile(null);
+    setUploading(false);
+  };
+
   return (
     <div>
       <h2 style={{ marginBottom: '1.5rem', color: 'var(--secondary)' }}>Video Content</h2>
       <div style={{ marginBottom: '2rem', padding: '1.5rem', border: '2px dashed var(--glass-border)', borderRadius: '12px' }}>
         <input 
-          placeholder="Video File Name (e.g., demo.mp4)" 
-          value={newVid}
-          onChange={(e) => setNewVid(e.target.value)}
-          style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'var(--background)', marginBottom: '1rem' }}
+          type="file"
+          accept="video/mp4"
+          onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
+          style={{ width: '100%', marginBottom: '1rem' }}
         />
-        <button onClick={() => { onAdd(newVid); setNewVid(''); }} className="btn-primary">Add Video</button>
+        <button 
+          onClick={handleUpload} 
+          className="btn-primary" 
+          disabled={!file || uploading}
+        >
+          {uploading ? 'Uploading...' : 'Upload Video'}
+        </button>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1rem' }}>
         {videos.map((vid, idx) => (

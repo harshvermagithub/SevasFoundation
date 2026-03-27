@@ -22,9 +22,14 @@ export default function Footer() {
           <h3 style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
             Registered NGO
           </h3>
-          <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+          <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
             &quot;It&apos;s not our disabilities, it&apos;s our abilities that count...&quot;
           </p>
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            <a href="https://www.instagram.com/sevasfoundationtrust?igsh=MTdycGFmMzFtcHA3bA%3D%3D" target="_blank" rel="noreferrer" className="btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
+              Follow on Instagram
+            </a>
+          </div>
         </div>
         
         <div style={{ flex: '1 1 200px' }}>

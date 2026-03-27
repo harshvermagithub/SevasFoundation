@@ -48,22 +48,55 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  const data = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  try {
+    const contentType = req.headers.get('content-type') || '';
+    let body: any;
+    let data = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
-  if (body.type === 'gallery') {
-    data.gallery.push(body.image);
-  } else if (body.type === 'video') {
-    data.videos.push(body.video);
-  } else if (body.type === 'event') {
-    const newEvent = { ...body.event, id: Date.now().toString() };
-    data.events.push(newEvent);
-  } else if (body.type === 'delete_event') {
-    data.events = data.events.filter((e: any) => e.id !== body.id);
-  } else if (body.type === 'delete_gallery') {
-    data.gallery = data.gallery.filter((img: string) => img !== body.image);
+    if (contentType.includes('multipart/form-data')) {
+      const formData = await req.formData();
+      const type = formData.get('type') as string;
+      const file = formData.get('file') as File;
+
+      if (!file) {
+        return NextResponse.json({ success: false, error: 'No file uploaded' }, { status: 400 });
+      }
+
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+
+      const fileName = `${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
+      let uploadDir = '';
+
+      if (type === 'gallery') {
+        uploadDir = path.join(process.cwd(), 'public', 'media', 'Clients');
+        if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+        const filePath = path.join(uploadDir, fileName);
+        fs.writeFileSync(filePath, buffer);
+        data.gallery.push(fileName);
+      } else if (type === 'video') {
+        uploadDir = path.join(process.cwd(), 'public', 'media', 'Video');
+        if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+        const filePath = path.join(uploadDir, fileName);
+        fs.writeFileSync(filePath, buffer);
+        data.videos.push(fileName);
+      }
+    } else {
+      body = await req.json();
+      if (body.type === 'event') {
+        const newEvent = { ...body.event, id: Date.now().toString() };
+        data.events.push(newEvent);
+      } else if (body.type === 'delete_event') {
+        data.events = data.events.filter((e: any) => e.id !== body.id);
+      } else if (body.type === 'delete_gallery') {
+        data.gallery = data.gallery.filter((img: string) => img !== body.image);
+      }
+    }
+
+    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    console.error('API Error:', error);
+    return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
   }
-
-  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
-  return NextResponse.json({ success: true, data });
 }
