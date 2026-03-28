@@ -1,12 +1,12 @@
+import BannerSlideshow from './BannerSlideshow';
 import Link from 'next/link';
+
 
 export default function Hero() {
   return (
     <section className="section hero-section">
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-          <img src="/logo_white.png" alt="Sevas Foundation Logo" style={{ height: '150px', width: 'auto' }} />
-        </div>
+        <BannerSlideshow />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center', marginBottom: '4rem' }}>
           <div style={{ flex: '1 1 500px', textAlign: 'left' }}>
             <h1 style={{
