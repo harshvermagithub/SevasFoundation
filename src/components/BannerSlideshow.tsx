@@ -28,7 +28,8 @@ export default function BannerSlideshow() {
       style={{ 
         position: 'relative', 
         width: '100%', 
-        height: 'clamp(160px, 32vw, 320px)', // Reduced height by 20%
+        height: 'clamp(230px, 46vw, 420px)', // Increased vertical size by ~15% properly without impacting width
+
         backgroundColor: '#f5f5f5',
         borderRadius: '24px',
         overflow: 'hidden',
@@ -61,7 +62,8 @@ export default function BannerSlideshow() {
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'cover'
+              objectFit: 'cover',
+              objectPosition: 'top center'
             }}
           />
         </div>
