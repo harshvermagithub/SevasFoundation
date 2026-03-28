@@ -6,7 +6,7 @@ export default function AdminPage() {
   const [password, setPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('admin123');
   const [activeMenu, setActiveMenu] = useState('gallery');
-  const [db, setDb] = useState<{ gallery: string[], videos: string[], events: any[], donations?: any[] }>({ gallery: [], videos: [], events: [], donations: [] });
+  const [db, setDb] = useState<{ gallery: string[], videos: string[], events: any[], donations?: any[], banners?: string[] }>({ gallery: [], videos: [], events: [], donations: [], banners: [] });
 
   useEffect(() => {
     fetch('/api/admin')
@@ -83,6 +83,13 @@ export default function AdminPage() {
           <div className="glass" style={{ width: '250px', padding: '1.5rem', height: 'fit-content' }}>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <button 
+                onClick={() => setActiveMenu('banners')} 
+                className={activeMenu === 'banners' ? 'btn-primary' : 'btn-outline'}
+                style={{ textAlign: 'left', border: activeMenu === 'banners' ? 'none' : '1px solid var(--glass-border)' }}
+              >
+                🏞️ Banners Manager
+              </button>
+              <button 
                 onClick={() => setActiveMenu('gallery')} 
                 className={activeMenu === 'gallery' ? 'btn-primary' : 'btn-outline'}
                 style={{ textAlign: 'left', border: activeMenu === 'gallery' ? 'none' : '1px solid var(--glass-border)' }}
@@ -126,6 +133,7 @@ export default function AdminPage() {
 
           {/* Main Area */}
           <div className="glass" style={{ flex: 1, padding: '2rem' }}>
+            {activeMenu === 'banners' && <BannersManager images={db.banners || ["banner1.jpg", "banner2.jpg", "banner3.jpg", "banner4.jpg", "banner5.jpg", "banner6.jpg"]} onAdd={(file) => handleAddData('banner', { file })} onDelete={(img) => handleAddData('delete_banner', { image: img })} />}
             {activeMenu === 'gallery' && <GalleryManager images={db.gallery} onAdd={(file) => handleAddData('gallery', { file })} onDelete={(img) => handleAddData('delete_gallery', { image: img })} />}
             {activeMenu === 'videos' && <VideoManager videos={db.videos} onAdd={(file) => handleAddData('video', { file })} />}
             {activeMenu === 'events' && <EventsManager events={db.events} onAdd={(ev) => handleAddData('event', { event: ev })} onDelete={(id) => handleAddData('delete_event', { id })} />}
@@ -308,6 +316,48 @@ function DonationsManager({ donations, onDelete }: { donations: any[], onDelete:
               </div>
             </div>
             <button onClick={() => onDelete(d.id)} style={{ color: 'red', background: 'none', border: '1px solid rgba(255,0,0,0.3)', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}>Remove</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function BannersManager({ images, onAdd, onDelete }: { images: string[], onAdd: (file: File) => void, onDelete: (img: string) => void }) {
+  const [file, setFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+
+  const handleUpload = async () => {
+    if (!file) return;
+    setUploading(true);
+    await onAdd(file);
+    setFile(null);
+    setUploading(false);
+  };
+
+  return (
+    <div>
+      <h2 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Homepage Banners Manager</h2>
+      <div style={{ marginBottom: '2rem', padding: '1.5rem', border: '2px dashed var(--glass-border)', borderRadius: '12px' }}>
+        <input 
+          type="file"
+          accept="image/*"
+          onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
+          style={{ width: '100%', marginBottom: '1rem' }}
+        />
+        <button 
+          onClick={handleUpload} 
+          className="btn-primary" 
+          disabled={!file || uploading}
+        >
+          {uploading ? 'Uploading...' : 'Upload New Banner'}
+        </button>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+        {images.map((img, idx) => (
+          <div key={`admin-banner-${img}-${idx}`} style={{ position: 'relative' }}>
+            <img src={img.startsWith('http') ? img : `/media/banner/${img}`} style={{ width: '100%', height: '100px', objectFit: 'cover', borderRadius: '8px' }} />
+            <button onClick={() => onDelete(img)} style={{ position: 'absolute', top: '5px', right: '5px', background: 'rgba(255,0,0,0.8)', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', padding: '2px 6px' }}>×</button>
           </div>
         ))}
       </div>

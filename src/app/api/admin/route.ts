@@ -80,10 +80,21 @@ export async function POST(req: Request) {
         const filePath = path.join(uploadDir, fileName);
         fs.writeFileSync(filePath, buffer);
         data.videos.push(fileName);
+      } else if (type === 'banner') {
+        uploadDir = path.join(process.cwd(), 'public', 'media', 'banner');
+        if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+        const filePath = path.join(uploadDir, fileName);
+        fs.writeFileSync(filePath, buffer);
+        if (!data.banners) data.banners = [];
+        data.banners.push(fileName);
       }
     } else {
       body = await req.json();
       if (!data.donations) data.donations = [];
+      if (!data.banners) data.banners = [
+         "banner1.jpg", "banner2.jpg", "banner3.jpg",
+         "banner4.jpg", "banner5.jpg", "banner6.jpg"
+      ];
 
       if (body.type === 'event') {
         const newEvent = { ...body.event, id: Date.now().toString() };
@@ -92,6 +103,8 @@ export async function POST(req: Request) {
         data.events = data.events.filter((e: any) => e.id !== body.id);
       } else if (body.type === 'delete_gallery') {
         data.gallery = data.gallery.filter((img: string) => img !== body.image);
+      } else if (body.type === 'delete_banner') {
+        data.banners = data.banners.filter((img: string) => img !== body.image);
       } else if (body.type === 'donation') {
         const newDonation = { ...body.donation, id: Date.now().toString(), date: new Date().toISOString() };
         data.donations.push(newDonation);

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function LimbsInfo() {
   return (
     <section className="section" style={{ background: 'var(--background)' }}>
@@ -44,9 +46,9 @@ export default function LimbsInfo() {
           <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto 2rem', lineHeight: 1.6 }}>
             A basic prosthetic leg cost in India might be way more for the economically weaker sections. If you are looking for a way to give back to society, your donation can help underprivileged families and individuals regain control of their lives.
           </p>
-          <a href="#donate" className="btn-primary" style={{ fontSize: '1.3rem', padding: '1rem 3rem' }}>
+          <Link href="/donate" className="btn-primary" style={{ fontSize: '1.3rem', padding: '1rem 3rem', display: 'inline-block' }}>
             Donate Now
-          </a>
+          </Link>
         </div>
 
       </div>

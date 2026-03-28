@@ -63,7 +63,7 @@ export default function Hero() {
           
           <div style={{ flex: '1 1 500px', display: 'flex', justifyContent: 'center' }}>
             <div style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '4px solid white', width: '100%' }}>
-               <img src="/media/About/WhatsApp Image 2026-03-20 at 17.52.37.jpeg" alt="Empowering Lives" style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }} />
+               <img src="/media/About/WhatsApp Image 2026-03-20 at 17.52.37.jpeg" alt="Empowering Lives" style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '16/9.45', objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
           </div>
         </div>
