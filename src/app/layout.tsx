@@ -20,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-glow" style={{ top: '-10%', left: '-10%' }}></div>
-        <div className="bg-glow secondary" style={{ top: '40%', right: '-10%' }}></div>
-        <div className="bg-glow accent" style={{ bottom: '-10%', left: '20%' }}></div>
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', zIndex: -1, pointerEvents: 'none' }}>
+          <div className="bg-glow" style={{ top: '-10%', left: '-10%' }}></div>
+          <div className="bg-glow secondary" style={{ top: '40%', right: '-10%' }}></div>
+          <div className="bg-glow accent" style={{ bottom: '-10%', left: '20%' }}></div>
+        </div>
         
         <Header />
         <main>{children}</main>

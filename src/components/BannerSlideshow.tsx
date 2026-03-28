@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 
 const bannerImages = [
-  "/media/banner/WhatsApp Image 2026-03-15 at 22.10.05.jpeg",
-  "/media/banner/WhatsApp Image 2026-03-20 at 14.05.33 (1).jpeg",
-  "/media/banner/WhatsApp Image 2026-03-20 at 14.05.33.jpeg",
-  "/media/banner/WhatsApp Image 2026-03-20 at 14.05.35 (1).jpeg",
-  "/media/banner/WhatsApp Image 2026-03-20 at 14.05.35.jpeg",
-  "/media/banner/WhatsApp Image 2026-03-20 at 17.52.37.jpeg"
+  "/media/banner/banner1.jpg",
+  "/media/banner/banner2.jpg",
+  "/media/banner/banner3.jpg",
+  "/media/banner/banner4.jpg",
+  "/media/banner/banner5.jpg",
+  "/media/banner/banner6.jpg"
 ];
 
 export default function BannerSlideshow() {
@@ -23,17 +23,21 @@ export default function BannerSlideshow() {
   }, []);
 
   return (
-    <div style={{ 
-      position: 'relative', 
-      width: '100%', 
-      height: '400px', // Increased height since it replaces the logo area
-      backgroundColor: '#f5f5f5',
-      borderRadius: '24px',
-      overflow: 'hidden',
-      marginBottom: '4rem',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
-      border: '4px solid white'
-    }}>
+    <div 
+      className="banner-container"
+      style={{ 
+        position: 'relative', 
+        width: '100%', 
+        height: 'clamp(160px, 32vw, 320px)', // Reduced height by 20%
+        backgroundColor: '#f5f5f5',
+        borderRadius: '24px',
+        overflow: 'hidden',
+        marginBottom: '4rem',
+        boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
+        border: '4px solid white',
+        zIndex: 1
+      }}
+    >
       {bannerImages.map((src, index) => (
         <div
           key={src}

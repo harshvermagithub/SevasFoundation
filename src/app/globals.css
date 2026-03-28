@@ -20,6 +20,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   scroll-behavior: smooth;
+  position: relative; /* Ensure fixed elements are relative to viewport */
 }
 
 a {
@@ -62,6 +63,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
 }
 
 .section {
@@ -377,5 +379,27 @@ a {
   .btn-email {
     width: 44px !important;
     padding: 0;
+  }
+
+  /* Fix Header Overflow */
+  .header-nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+    margin-left: 0 !important;
+  }
+
+  /* Prevent Hero section overflow */
+  .hero-section .container > div {
+    gap: 1.5rem !important;
+  }
+
+  .hero-section [style*="flex: 1 1 500px"] {
+    flex: 1 1 100% !important;
+    max-width: 100%;
   }
 }
