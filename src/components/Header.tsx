@@ -16,23 +16,8 @@ export default function Header() {
         <Link href="/services" className="nav-link">Services</Link>
         <Link href="/products" className="nav-link">Products</Link>
         
-        <div className="dropdown">
-          <Link href="/media" className="nav-link" style={{ cursor: 'pointer' }}>Media ▾</Link>
-          <div className="dropdown-menu glass">
-            <Link href="/media" className="dropdown-item">Image Gallery</Link>
-            <Link href="/media" className="dropdown-item">Social Media</Link>
-            <Link href="/media" className="dropdown-item">Events</Link>
-          </div>
-        </div>
-
-        <div className="dropdown">
-          <Link href="/highlights" className="nav-link" style={{ cursor: 'pointer' }}>Highlights ▾</Link>
-          <div className="dropdown-menu glass">
-            <Link href="/highlights" className="dropdown-item">Awards & Achievements</Link>
-            <Link href="/highlights" className="dropdown-item">Success Stories</Link>
-            <Link href="/highlights" className="dropdown-item">Testimonials</Link>
-          </div>
-        </div>
+        <Link href="/media" className="nav-link">Media</Link>
+        <Link href="/highlights" className="nav-link">Highlights</Link>
 
         <Link href="/contact" className="nav-link">Contact</Link>
         <Link href="/donate" className="btn-primary nav-btn" style={{ marginLeft: '1rem' }}>Donate Now</Link>

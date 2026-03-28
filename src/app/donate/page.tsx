@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 
 export default function DonatePage() {
-  const [activeTab, setActiveTab] = useState('paytm');
+  const [activeTab, setActiveTab] = useState('qr');
 
   const tabs = [
-    { id: 'paytm', label: 'Donate via Paytm / UPI' },
+    { id: 'qr', label: 'Donate via QR Code / UPI' },
     { id: 'bank', label: 'Bank Details' },
     { id: 'policy', label: 'Donation Policy' }
   ];
@@ -29,36 +29,30 @@ export default function DonatePage() {
         </div>
 
         <div className="glass" style={{ padding: '3rem', minHeight: '400px', background: 'var(--glass-bg)' }}>
-          {activeTab === 'paytm' && (
+          {activeTab === 'qr' && (
             <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <h2 style={{ color: 'var(--primary)', marginBottom: '2rem' }}>Donate Seamlessly via UPI / Paytm</h2>
-              <div style={{ background: '#fff', padding: '1rem', borderRadius: '8px', display: 'inline-block', marginBottom: '1.5rem' }}>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=sevasfoundationtrust%40upi" alt="UPI QR Code" style={{ width: '200px', height: '200px' }} />
+              <h2 style={{ color: 'var(--primary)', marginBottom: '2rem' }}>Donate Seamlessly via QR Code / UPI</h2>
+              <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                <div style={{ background: '#fff', padding: '1rem', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                  <img src="/media/donate_3.png" alt="QR Code 1" style={{ maxWidth: '300px', height: 'auto', borderRadius: '8px' }} />
+                </div>
+                <div style={{ background: '#fff', padding: '1rem', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                  <img src="/media/donate_4.png" alt="QR Code 2" style={{ maxWidth: '300px', height: 'auto', borderRadius: '8px' }} />
+                </div>
               </div>
-              <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>UPI ID: <span style={{ color: 'var(--primary)' }}>sevasfoundationtrust@upi</span></p>
-              <p style={{ color: 'var(--text-muted)' }}>Scan using any UPI enabled app like Paytm, GPay, or PhonePe to make a direct donation.</p>
+              <p style={{ color: 'var(--text-muted)' }}>Scan using any UPI enabled app like Paytm, PhonePe, or Google Pay to make a direct donation.</p>
             </div>
           )}
 
           {activeTab === 'bank' && (
-            <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'left' }}>
-              <h2 style={{ color: 'var(--secondary)', marginBottom: '2rem', textAlign: 'center' }}>Direct Bank Transfer</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', background: 'rgba(255,255,255,0.8)', padding: '2rem', borderRadius: '12px' }}>
-                <div>
-                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Account Name</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--foreground)' }}>Sevas Foundation Trust</div>
+            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{ color: 'var(--secondary)', marginBottom: '2rem' }}>Direct Bank Transfer</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
+                <div style={{ width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
+                  <img src="/media/donate_1.png" alt="Bank Certificate 1" style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
-                <div>
-                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Account Number</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--foreground)', fontFamily: 'monospace' }}>32132100000101</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>IFSC Code</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--foreground)', fontFamily: 'monospace' }}>BOMBL12345</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Bank</div>
-                  <div style={{ fontSize: '1.3rem', fontWeight: 'bold', color: 'var(--foreground)' }}>Bank of India</div>
+                <div style={{ width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)' }}>
+                  <img src="/media/donate_2.png" alt="Bank Certificate 2" style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
               </div>
             </div>
