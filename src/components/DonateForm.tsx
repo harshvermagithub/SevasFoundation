@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function DonateForm() {
+  const router = useRouter();
+  
   const [formData, setFormData] = useState({
     purpose: 'Free of Cost Artificial Limb Distribution',
     quantity: 1,
@@ -20,22 +23,23 @@ export default function DonateForm() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        ...formData,
-        quantity: 1,
-        name: '',
-        mobile: '',
-        email: '',
-        pan: ''
+    
+    try {
+      await fetch('/api/admin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'donation', donation: formData })
       });
-      alert("Thank you for your generous pledge! Our team will contact you shortly to complete the donation process.");
-    }, 1500);
+      
+      // Navigate to the precise location the QR codes are stored
+      router.push('/donate');
+    } catch (e) {
+      setIsSubmitted(false);
+      alert("Failed to submit, please try again.");
+    }
   };
 
   return (

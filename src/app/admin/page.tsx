@@ -6,7 +6,7 @@ export default function AdminPage() {
   const [password, setPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('admin123');
   const [activeMenu, setActiveMenu] = useState('gallery');
-  const [db, setDb] = useState<{ gallery: string[], videos: string[], events: any[] }>({ gallery: [], videos: [], events: [] });
+  const [db, setDb] = useState<{ gallery: string[], videos: string[], events: any[], donations?: any[] }>({ gallery: [], videos: [], events: [], donations: [] });
 
   useEffect(() => {
     fetch('/api/admin')
@@ -110,6 +110,13 @@ export default function AdminPage() {
               >
                 ⚙️ Admin Settings
               </button>
+              <button 
+                onClick={() => setActiveMenu('donations')} 
+                className={activeMenu === 'donations' ? 'btn-primary' : 'btn-outline'}
+                style={{ textAlign: 'left', border: activeMenu === 'donations' ? 'none' : '1px solid var(--glass-border)', marginTop: '0.5rem' }}
+              >
+                💝 Donation Pledges
+              </button>
               <hr style={{ margin: '1rem 0', opacity: 0.2 }} />
               <button onClick={handleLogout} className="btn-outline" style={{ color: 'red', borderColor: 'rgba(255,0,0,0.2)' }}>
                 Logout
@@ -123,6 +130,7 @@ export default function AdminPage() {
             {activeMenu === 'videos' && <VideoManager videos={db.videos} onAdd={(file) => handleAddData('video', { file })} />}
             {activeMenu === 'events' && <EventsManager events={db.events} onAdd={(ev) => handleAddData('event', { event: ev })} onDelete={(id) => handleAddData('delete_event', { id })} />}
             {activeMenu === 'settings' && <SettingsManager currentPassword={currentPassword} onPasswordUpdate={setCurrentPassword} />}
+            {activeMenu === 'donations' && <DonationsManager donations={db.donations || []} onDelete={(id) => handleAddData('delete_donation', { id })} />}
           </div>
         </div>
       </div>
@@ -277,6 +285,32 @@ function SettingsManager({ currentPassword, onPasswordUpdate }: { currentPasswor
         </div>
         <button type="submit" className="btn-primary" style={{ width: 'fit-content', marginTop: '1rem', padding: '0.8rem 2rem' }}>Update Password</button>
       </form>
+    </div>
+  );
+}
+
+function DonationsManager({ donations, onDelete }: { donations: any[], onDelete: (id: string) => void }) {
+  return (
+    <div>
+      <h2 style={{ marginBottom: '1.5rem', color: 'var(--primary)' }}>Donation Pledges & Form Submissions</h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {donations.length === 0 ? <p style={{ color: 'var(--text-muted)' }}>No donation submissions have been recorded yet.</p> : null}
+        {donations.map((d: any) => (
+          <div key={d.id} className="glass" style={{ padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <div>
+              <strong style={{ fontSize: '1.3rem', color: 'var(--foreground)' }}>{d.name}</strong> 
+              <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>({d.mobile} | {d.email})</span>
+              <div style={{ marginTop: '0.8rem', marginBottom: '0.5rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
+                <span style={{ fontWeight: 600, color: 'var(--primary)' }}>Purpose:</span> {d.purpose} <br/>
+                <span style={{ fontWeight: 600, color: 'var(--primary)' }}>Quantity:</span> {d.quantity} <br/>
+                <span style={{ fontWeight: 600, color: 'var(--primary)' }}>PAN Card:</span> <span style={{ textTransform: 'uppercase' }}>{d.pan || 'Not Provided'}</span> <br/>
+                <span style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Received On:</span> <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{new Date(d.date).toLocaleString()}</span>
+              </div>
+            </div>
+            <button onClick={() => onDelete(d.id)} style={{ color: 'red', background: 'none', border: '1px solid rgba(255,0,0,0.3)', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}>Remove</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
